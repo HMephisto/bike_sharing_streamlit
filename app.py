@@ -4,8 +4,8 @@ import pandas as pd
 st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
 st.sidebar.title("🚴 Bike Sharing")
 st.sidebar.page_link("app.py", label="🏠 Dashboard")
-st.sidebar.page_link("pages/raw_data.py", label="📄 Raw Data")
-st.sidebar.page_link("pages/analysis.py", label="📄 Analysis")
+st.sidebar.page_link("pages/raw_data.py", label="📝 Raw Data")
+st.sidebar.page_link("pages/analysis.py", label="📊 Analysis")
 st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 
 day_df = pd.read_csv("df_day_cleaned.csv")

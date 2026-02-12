@@ -11,10 +11,10 @@ df = pd.read_csv("df_day_cleaned.csv")
 
 with st.sidebar:
     st.page_link("app.py", label="🏠 Dashboard")
-    st.page_link("pages/raw_data.py", label="📊 Raw Data")
+    st.page_link("pages/raw_data.py", label="📝 Raw Data")
 
     st.sidebar.title("Data Analysis")
-    st.page_link("pages/analysis.py", label="📄 User Behaviour Analysis")
+    st.page_link("pages/analysis.py", label="📈 User Behaviour Analysis")
     st.page_link("pages/weather_analysis.py", label="🔍 Weather Analysis")
 st.title("User Behaviour Analysis")
 
