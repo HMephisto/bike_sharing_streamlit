@@ -11,15 +11,13 @@ st.sidebar.title("🚴 Bike Sharing")
 st.sidebar.page_link("app.py", label="📊 Dashboard")
 st.sidebar.page_link("pages/raw_data.py", label="📄 Raw Data")
 st.sidebar.page_link("pages/analysis.py", label="📄 Analysis")
-st.sidebar.page_link("pages/anggota.py", label="👤   About Us")
+st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 
 # =========================
 # LOAD DATA
 # =========================
 day_df = pd.read_csv("df_day_cleaned.csv")
 hour_df = pd.read_csv("hour.csv")
-
-
 
 # Convert date
 day_df["date"] = pd.to_datetime(day_df["date"])
@@ -29,6 +27,32 @@ hour_df["dteday"] = pd.to_datetime(hour_df["dteday"])
 # DASHBOARD CONTENT
 # =========================
 st.title("📊 Dashboard Overview")
+
+# CSS untuk Panel KPI agar teks otomatis ke tengah
+st.markdown(
+    """
+    <style>
+    .metric-card {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        text-align: center; /* Memastikan teks di tengah */
+    }
+    .metric-label {
+        color: #888;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .metric-value {
+        color: #fff;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Filters
 st.sidebar.header("Filters")
@@ -46,36 +70,67 @@ season = st.sidebar.multiselect(
 )
 
 filtered_day = day_df[(day_df["year"] == year) & (day_df["season"].isin(season))]
-# filtered_hour = hour_df[(hour_df["year"] == year) & (hour_df["season"].isin(season))]
 
-# KPI
-col1, col2, col3 = st.columns(3)
-col1.metric("Total Rentals", int(filtered_day["total"].sum()))
-col2.metric("Casual Users", int(filtered_day["casual"].sum()))
-col3.metric("Registered Users", int(filtered_day["registered"].sum()))
+# =========================
+# KPI - SINGLE ROW PANEL (CENTERED)
+# =========================
+# Menggunakan variabel kolom unik untuk KPI agar tidak bentrok dengan chart
+kpi_col1, kpi_col2, kpi_col3 = st.columns(3)
+
+with kpi_col1:
+    st.markdown(
+        f"""
+        <div class="metric-card">
+            <div class="metric-label">Total Rentals</div>
+            <div class="metric-value">{int(filtered_day["total"].sum()):,}</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with kpi_col2:
+    st.markdown(
+        f"""
+        <div class="metric-card">
+            <div class="metric-label">Casual Users</div>
+            <div class="metric-value">{int(filtered_day["casual"].sum()):,}</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with kpi_col3:
+    st.markdown(
+        f"""
+        <div class="metric-card">
+            <div class="metric-label">Registered Users</div>
+            <div class="metric-value">{int(filtered_day["registered"].sum()):,}</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.divider()
 
-# Charts side-by-side
-col1, col2 = st.columns(2)
+# =========================
+# CHARTS CONTENT
+# =========================
+# Baris pertama grafik
+chart_col1, chart_col2 = st.columns(2)
 
-with col1:
+with chart_col1:
     st.subheader("📈 Rentals Over Time")
     st.line_chart(filtered_day.set_index("date")["total"])
 
-with col2:
+with chart_col2:
     st.subheader("👥 Casual vs Registered")
     st.bar_chart(filtered_day[["casual", "registered"]])
 
-col3, col4 = st.columns(2)
+st.divider()
 
-with col3:
+season_col, empty_col = st.columns(2)
+
+with season_col:
     st.subheader("🌤 Rentals by Season")
     season_data = filtered_day.groupby("season")["total"].sum()
     st.bar_chart(season_data)
-
-# with col4:
-#     st.subheader("⏰ Hourly Rental Pattern")
-#     hourly_data = filtered_hour.groupby("hr")["total"].mean()
-#     st.line_chart(hourly_data)
-
