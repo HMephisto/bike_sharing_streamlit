@@ -18,7 +18,6 @@ with st.sidebar:
     st.sidebar.title("Data Analysis")
     st.page_link("pages/analysis.py", label="📄 User Behaviour Analysis")
     st.page_link("pages/weather_analysis.py", label="🔍 Weather Analysis")
-
 st.title("User Behaviour Analysis")
 
 st.write("Perbandingan Hari Kerja dan Akhir Pekan dalam Penggunaan Sepeda")
@@ -59,7 +58,6 @@ ax[2].set_ylabel('Total Rental')
 
 plt.subplots_adjust(wspace=0.4)
 
-# Tampilkan di Streamlit
 st.pyplot(fig)
 
 st.subheader("Kondisi Cuaca terhadap Jumlah Rental Sepeda")
