@@ -11,7 +11,7 @@ df = pd.read_csv("df_day_cleaned.csv")
 
 with st.sidebar:
     st.page_link("app.py", label="🏠 Dashboard")
-    st.page_link("pages/raw_data.py", label="📝 Raw Data")
+    st.sidebar.page_link("pages/dataset.py", label="📝 Dataset")
     st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 
     st.sidebar.title("Data Analysis")
