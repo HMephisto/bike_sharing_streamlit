@@ -5,17 +5,18 @@ import numpy as np
 
 
 st.set_page_config(page_title="Analysis", layout="wide")
-st.sidebar.title("🚴 Overview")
+st.sidebar.title("Bike Sharing")
 
 df = pd.read_csv("df_day_cleaned.csv")
 
 with st.sidebar:
     st.page_link("app.py", label="🏠 Dashboard")
     st.page_link("pages/raw_data.py", label="📝 Raw Data")
+    st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 
     st.sidebar.title("Data Analysis")
     st.page_link("pages/analysis.py", label="📈 User Behaviour Analysis")
-    st.page_link("pages/weather_analysis.py", label="🔍 Weather Analysis")
+    st.page_link("pages/weather_analysis.py", label="🌡️ Weather Analysis")
 st.title("User Behaviour Analysis")
 
 st.write("Analisis Rental Sepeda ketika Musim Atau Suhu berubah-rubah")

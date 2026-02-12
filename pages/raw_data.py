@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="Raw Data", layout="wide")
-st.sidebar.title("🚴 Bike Sharing")
+st.sidebar.title("Bike Sharing")
 st.sidebar.page_link("app.py", label="🏠 Dashboard")
 st.sidebar.page_link("pages/raw_data.py", label="📝 Raw Data")
 st.sidebar.page_link("pages/analysis.py", label="📊 Analysis")
