@@ -5,8 +5,6 @@ import numpy as np
 
 
 st.set_page_config(page_title="Analysis", layout="wide")
-
-# SIDEBAR NAVIGATION
 st.sidebar.title("🚴 Overview")
 
 df = pd.read_csv("df_day_cleaned.csv")
@@ -20,16 +18,14 @@ with st.sidebar:
     st.page_link("pages/weather_analysis.py", label="🔍 Weather Analysis")
 st.title("User Behaviour Analysis")
 
-st.write("Perbandingan Hari Kerja dan Akhir Pekan dalam Penggunaan Sepeda")
+st.write("Analisis Rental Sepeda ketika Musim Atau Suhu berubah-rubah")
 
 
 # Load data
 df = pd.read_csv("df_day_cleaned.csv")
 
-# Mengubah tipe data weather ke numeric
 df['weather'] = pd.to_numeric(df['weather'])
 
-# Denormalized temparature, humidity dan winspeed ke value aslinya
 df['suhu'] = df['temp'] * 41
 df['kelembapan'] = df['humidity'] * 100
 df['kecepatan_angin'] = df['windspeed'] * 67
@@ -38,19 +34,16 @@ avg_rentals_weather = df.groupby('weather')['total'].mean()
 
 fig, ax = plt.subplots(1, 3, figsize=(15, 5))
 
-# Suhu
 ax[0].scatter(df['suhu'], df['total'], alpha=0.5, c='orange')
 ax[0].set_title('Suhu')
 ax[0].set_xlabel('Suhu (°C)')
 ax[0].set_ylabel('Total Rental')
 
-# Kelembapan
 ax[1].scatter(df['kelembapan'], df['total'], alpha=0.5, c='skyblue')
 ax[1].set_title('Kelembapan')
 ax[1].set_xlabel('%')
 ax[1].set_ylabel('Total Rental')
 
-# Kecepatan angin
 ax[2].scatter(df['kecepatan_angin'], df['total'], alpha=0.5, c='green')
 ax[2].set_title('Kecepatan Angin')
 ax[2].set_xlabel('Kecepatan Angin (km/h)')
@@ -62,13 +55,11 @@ st.pyplot(fig)
 
 st.subheader("Kondisi Cuaca terhadap Jumlah Rental Sepeda")
 
-# Ambil data boxplot per kondisi cuaca
 weather_data = [
     df[df['weather'] == i]['total']
     for i in sorted(df['weather'].unique())
 ]
 
-# Plot
 fig, ax = plt.subplots()
 
 ax.boxplot(
@@ -80,7 +71,6 @@ ax.boxplot(
 ax.set_title('Kondisi Cuaca terhadap Jumlah Rental Sepeda')
 ax.set_ylabel('Total Rental')
 
-# Tampilkan di Streamlit
 st.pyplot(fig)
 
 st.markdown("""

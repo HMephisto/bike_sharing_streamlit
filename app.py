@@ -2,33 +2,19 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
-
-# =========================
-# SIDEBAR NAVIGATION
-# =========================
 st.sidebar.title("🚴 Bike Sharing")
-
 st.sidebar.page_link("app.py", label="📊 Dashboard")
 st.sidebar.page_link("pages/raw_data.py", label="📄 Raw Data")
 st.sidebar.page_link("pages/analysis.py", label="📄 Analysis")
 st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 
-# =========================
-# LOAD DATA
-# =========================
 day_df = pd.read_csv("df_day_cleaned.csv")
 hour_df = pd.read_csv("hour.csv")
-
-# Convert date
 day_df["date"] = pd.to_datetime(day_df["date"])
 hour_df["dteday"] = pd.to_datetime(hour_df["dteday"])
 
-# =========================
-# DASHBOARD CONTENT
-# =========================
 st.title("📊 Dashboard Overview")
 
-# CSS untuk Panel KPI agar teks otomatis ke tengah
 st.markdown(
     """
     <style>
@@ -54,9 +40,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Filters
 st.sidebar.header("Filters")
-
 year = st.sidebar.selectbox(
     "Select Year",
     options=day_df["year"].unique(),
@@ -70,11 +54,6 @@ season = st.sidebar.multiselect(
 )
 
 filtered_day = day_df[(day_df["year"] == year) & (day_df["season"].isin(season))]
-
-# =========================
-# KPI - SINGLE ROW PANEL (CENTERED)
-# =========================
-# Menggunakan variabel kolom unik untuk KPI agar tidak bentrok dengan chart
 kpi_col1, kpi_col2, kpi_col3 = st.columns(3)
 
 with kpi_col1:
@@ -111,11 +90,6 @@ with kpi_col3:
     )
 
 st.divider()
-
-# =========================
-# CHARTS CONTENT
-# =========================
-# Baris pertama grafik
 chart_col1, chart_col2 = st.columns(2)
 
 with chart_col1:
@@ -127,7 +101,6 @@ with chart_col2:
     st.bar_chart(filtered_day[["casual", "registered"]])
 
 st.divider()
-
 season_col, empty_col = st.columns(2)
 
 with season_col:

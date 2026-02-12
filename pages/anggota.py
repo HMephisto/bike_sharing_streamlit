@@ -12,7 +12,6 @@ st.sidebar.page_link("pages/anggota.py", label="👤 About Us")
 st.title("Data Kelompok")
 st.subheader("Kelompok 5")
 
-# Data anggota
 data = {
     "NIM": [
         "10124015",
