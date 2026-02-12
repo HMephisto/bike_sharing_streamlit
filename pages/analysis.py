@@ -74,12 +74,10 @@ st.pyplot(fig)
 
 st.markdown("""
 Berdasarkan grafik diatas, dapat disimpulkan bahwa penggunaan sepeda sangat diminati baik di working day atau holiday, dengan beberapa poin sebagai berikut :
+    
+        *   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500
+        *   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500
+        *   Terdapat lonjakan yang sangat tinggi di hari rabu karena setelah meriset kembali dataset, ditemukan bahwa ternyata hari tersebut tepat berada pada hari libur nasional tanggal 4 Juli 2012
+        *   Penurunan terjadi pula di hari selasa, karena setelah diriset kembali di dataset, ternyata holiday hanya bertepatan satu hari dengan natal, dan dikarenakan suhu yang dingin pemakaian sepeda menjadi sedikit
             
-      *   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500
-      *   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500
-      *   Terdapat lonjakan yang sangat tinggi di hari rabu karena setelah meriset kembali dataset, ditemukan bahwa ternyata hari tersebut tepat berada pada hari libur nasional tanggal 4 Juli 2012
-      *   Penurunan terjadi pula di hari selasa, karena setelah diriset kembali di dataset, ternyata holiday hanya bertepatan satu hari dengan natal, dan dikarenakan suhu yang dingin pemakaian sepeda menjadi sedikit    
-
-
-
 """)
