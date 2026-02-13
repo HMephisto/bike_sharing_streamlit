@@ -229,21 +229,19 @@ with col3:
 st.markdown(f"""
 ### 📈 Insight dan Kesimpulan
 
-Dari hasil analisis, terlihat bahwa rata-rata penyewaan sepeda di awal bulan (1–10) lebih tinggi dibandingkan akhir bulan (21–31). Awal bulan mencatat angka sekitar **{rata_awal:,.0f}** penyewaan per hari, sedangkan akhir bulan sedikit lebih rendah, yaitu **{rata_akhir:,.0f}** penyewaan per hari.
+Dari hasil analisis, rata-rata penyewaan sepeda di **awal bulan (1–10)** mencatat **{rata_awal:,.0f}** penyewaan per hari, lebih tinggi dibandingkan **akhir bulan (21–31)** dengan **{rata_akhir:,.0f}** penyewaan per hari.
 
-Perbedaan ini menunjukkan bahwa penggunaan cenderung lebih aktif menyewa sepeda di awal bulan. Hal ini bisa terjadi karena beberapa alasan, misalnya:
+**Alasan:**
+* Awal bulan: orang baru menerima gaji, lebih leluasa untuk aktivitas rekreasi
+* Jadwal di awal bulan cenderung lebih stabil
+* Akhir bulan: pengeluaran dikurangi karena faktor finansial
 
-* Awal bulan biasanya orang baru menerima gaji, sehingga mereka lebih leluasa melakukan aktivitas seperti olahraga atau rekreasi.
-* Jadwal dan aktivitas di awal bulan mungkin lebih stabil, sehingga lebih banyak waktu untuk bersepeda.
-* Menjelang akhir bulan, sebagian orang mulai mengurangi pengeluaran atau aktivitas luar karena kesibukan atau faktor finansial.
-
-Meskipun ada perbedaan, peningkatan hanya sebesar **{abs(persen_beda):.1f}%** menunjukkan bahwa perbedaan awal dan akhir bulan tidak terlalu signifikan dalam mempengaruhi penyewaan sepeda. Faktor-faktor lain seperti kondisi cuaca, hari kerja versus hari libur, dan seasonal pattern mungkin memiliki pengaruh yang lebih besar terhadap penggunaan sepeda. 
-
-Namun, dari perspektif bisnis, peningkatan **{abs(persen_beda):.1f}%** ini tetap bisa dimanfaatkan untuk strategi promosi atau penawaran khusus di awal bulan untuk memaksimalkan revenue.
+Meskipun ada perbedaan, peningkatan hanya **{abs(persen_beda):.1f}%** menunjukkan perbedaan tidak terlalu signifikan. Faktor cuaca, hari kerja, dan pola musiman memiliki pengaruh lebih besar. Namun, peningkatan ini tetap bisa dimanfaatkan untuk strategi promosi di awal bulan.
 
 ### 💡 Rekomendasi untuk Perusahaan
 
 **Strategi Operasional:**
+<<<<<<< HEAD
 
 1. **Manajemen Inventori:**
    - Sesuaikan ketersediaan sepeda berdasarkan pola awal vs akhir bulan
