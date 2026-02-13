@@ -135,7 +135,17 @@ plt.show()
 st.pyplot(fig2)
 
 st.markdown("""
-Berdasarkan analisa data dan plotline diatas, terdapat peningkatan yang signifikan dalam rata-rata jumlah pengguna sepeda harian oleh pengguna registered selama periode waktu yang dicakup dataset. Pengguna cenderung meningkat tajam di bulan-bulan musim semi dan musim panas (Maret - September) dan menurun drastis pada bulan-bulan musim dingin (November - Februari). Pola ini menunjukkan kestabilan setiap tahun, sehingga menunjukkan pola musiman yang kuat. Puncak penggunaan di tahun 2012 juga jauh lebih tinggi daripada tahun sebelumnya. Ini mengindikasikan bahwa sistem bike sharing ini mampu meregistrasi dan mempertahankan pengguna dari tahun ke tahun.
+Berdasarkan analisa data dan plotline diatas, dapat ditarik kesimpulan :
 
-Dari hasil analisis ini, kita dapat mengukur pertumbuhan loyal costumer dan pertumbuhan bisnis dalam jangka panjang, dapat menentukan momentum untuk menyusun berbagai strategi bisnis, dan juga menentukan dasar keputusan investasi untuk pengembangan bisnis secara akurat.
+* Terdapat peningkatan yang signifikan dalam rata-rata jumlah pengguna sepeda harian oleh pengguna registered selama periode waktu yang dicakup dataset.
+* Pengguna cenderung meningkat tajam di bulan-bulan musim semi dan musim panas (Maret - September) dan menurun drastis pada bulan-bulan musim dingin (November - Februari).
+* Pola ini menunjukkan kestabilan setiap tahun, sehingga menunjukkan pola musiman yang kuat.
+* Puncak penggunaan di tahun 2012 juga jauh lebih tinggi daripada tahun sebelumnya. Ini mengindikasikan bahwa sistem bike sharing ini mampu meregistrasi dan mempertahankan pengguna dari tahun ke tahun.
+
+
+Dari konklusi analisis ini, perusahaan dapat :
+
+* Mengukur pertumbuhan loyal costumer dan pertumbuhan bisnis dalam jangka panjang.
+* Menentukan momentum untuk menyusun berbagai strategi bisnis.
+* Menentukan dasar keputusan investasi untuk pengembangan bisnis secara akurat.
 """)
