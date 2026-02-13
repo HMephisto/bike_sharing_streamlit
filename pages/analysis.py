@@ -407,3 +407,81 @@ st.markdown("""
 
 st.info("📊 Secara keseluruhan, analisis **_Bagaimana pengaruh perubahan musim terhadap jumlah rental sepeda di hari kerja dan di hari libur di tahun 2011 dan 2012_** menunjukkan bahwa kombinasi faktor musim dan jenis hari sangat mempengaruhi perilaku pengguna.")
 
+st.write()
+st.header("Analisis Pertumbuhan Penyewaan Sepeda (2011 vs 2012)")
+
+df['date'] = pd.to_datetime(df['date'])
+df['year'] = df['date'].dt.year
+
+#menghitung total rental per tahun
+annual_rentals = df.groupby('year')['total'].sum().reset_index()
+
+rental_2011 = annual_rentals[annual_rentals['year'] == 2011]['total'].iloc[0]
+rental_2012 = annual_rentals[annual_rentals['year'] == 2012]['total'].iloc[0]
+
+diff = rental_2012 - rental_2011
+percentage = (diff / rental_2011) * 100
+
+st.subheader("📊 Ringkasan Pertumbuhan Tahunan")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Total Rental 2011", f"{rental_2011:,.0f}")
+
+with col2:
+    st.metric("Total Rental 2012", f"{rental_2012:,.0f}", f"{diff:+,.0f}")
+
+with col3:
+    kondisi = "Pertumbuhan Signifikan 📈" if diff > 0 else "Penurunan 📉"
+    st.metric("Perubahan (%)", f"{percentage:+.2f}%", kondisi)
+
+fig5, ax5 = plt.subplots(figsize=(8,5))
+ax5.bar(['2011', '2012'], [rental_2011, rental_2012], color=['#4e79a7','#f28e2b'])
+ax5.set_title("Perbandingan Total Penyewaan Sepeda (2011 vs 2012)", fontsize=14)
+ax5.set_ylabel("Total Rental")
+ax5.grid(axis='y', linestyle='--', alpha=0.5)
+
+plt.tight_layout()
+st.pyplot(fig5)
+
+st.markdown(f"""
+## 📈 Insight Utama
+
+Berdasarkan hasil perhitungan total penyewaan tahunan, terjadi peningkatan dari  
+**{rental_2011:,.0f} penyewaan pada tahun 2011** menjadi  
+**{rental_2012:,.0f} penyewaan pada tahun 2012**.
+
+Hal ini menunjukkan adanya pertumbuhan sebesar **{percentage:.2f}%**, yang tergolong signifikan dalam periode satu tahun.
+
+---
+
+## Conclusion
+
+Dapat disimpulkan bahwa layanan *bike sharing* mengalami pertumbuhan yang sangat positif dari tahun 2011 ke 2012.  
+Peningkatan ini mengindikasikan:
+
+- Bertambahnya jumlah pengguna
+- Meningkatnya kepercayaan masyarakat terhadap layanan
+- Sistem operasional yang semakin optimal
+
+---
+
+## Recommendation
+
+**1️⃣ Strategi Ekspansi**
+- Perusahaan dapat mempertimbangkan penambahan armada sepeda.
+- Ekspansi titik lokasi rental untuk menjangkau demand yang meningkat.
+
+**2️⃣ Strategi Retensi Pengguna**
+- Mempertahankan kualitas layanan untuk menjaga pertumbuhan berkelanjutan.
+- Mengembangkan program loyalitas pengguna.
+
+**3️⃣ Perencanaan Kapasitas**
+- Gunakan tren pertumbuhan ini sebagai dasar proyeksi demand di tahun berikutnya.
+- Siapkan infrastruktur operasional untuk mengantisipasi peningkatan lanjutan.
+
+---
+""")
+
+st.info("📊 Secara keseluruhan, analisis ini menunjukkan bahwa periode 2011–2012 merupakan fase pertumbuhan signifikan dalam perkembangan sistem bike sharing.")
