@@ -73,21 +73,19 @@ plt.show()
 st.pyplot(fig)
 
 st.markdown("""
-Berdasarkan grafik diatas, dapat diketahui bahwa :
+Berdasarkan grafik diatas, didapat sebuah insight bahwa :
    
-*   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500
-*   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500
-*   Terdapat lonjakan yang sangat tinggi di hari rabu karena setelah meriset kembali dataset, ditemukan bahwa ternyata hari rabu selama rentang 2 tahun hanya memiliki satu libur pada tanggal 4 Juli 2012 yang lonjakan nya sudah sangat tinggi
-*   Penurunan terjadi pula di hari selasa, karena setelah diriset kembali di dataset, ternyata holiday untuk hari selasa hanya ada 1 yang bertepatan di tanggal 25 Desember 2012
+*   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500 mengindikasikan bahwa pekerja atau pelajar meminati penggunaan sepeda setiap harinya
+*   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500 mengindikasikan pula bahwa sepeda tetap menjadi tranportasi yang memiliki banyak minat di hari libur
             
-Maka insight yang bisa kita dapat, sebagai berikut :
+Maka konklusi yang bisa kita dapat adalah, sebagai berikut :
    
-*   Rata-rata pengguna menggunakan sepeda ketika working day dan weekend, dan grafik penggunaan sangat stabil yang bisa digunakan perusahaan untuk acuan tetap menjaga ketersediaan sepeda saat working day
-*   Penggunaan sepeda saat holiday cenderung naik turun, dan memiliki kecenderungan dengan suhu/musim. Ini juga bisa digunakan oleh perusahaan misal untuk pemeliharaan sepeda
+*   Rata-rata pengguna tetap nyaman menggunakan sepeda ketika working day dan weekend, dan grafik menunjukkan kestabilan yang bisa digunakan perusahaan untuk acuan agar tetap menjaga ketersediaan sepeda saat working day
+*   Penggunaan sepeda saat holiday cenderung naik turun dibandingkan hari biasa. Ini juga bisa digunakan oleh perusahaan misal untuk pemeliharaan sepeda
 
 Saran yang bisa diberikan untuk perusahaan adalah sebagai berikut:
 
-*   Persiapkan selalu ketersedian sepeda ketika working day dan weekend biasa, dan gunakan  suasana suhu/musim  untuk pemeliharaaan sepeda
-*   Holiday cenderung naik dan turun, maka direkomendasikan pula untuk perusahaan mempersiapkan stok sepeda cadangan agar supply tetap tersedia
+*   Persiapkan selalu ketersedian sepeda ketika working day dan weekend/holiday
+*   Holiday cenderung naik dan turun, maka direkomendasikan pula untuk perusahaan mempersiapkan stok sepeda cadangan agar supply tetap tersedia 
 *   Persiapkan diskon voucher/promo di hari-hari non-Holiday (Wworking day/Weekend), karena ini akan menjaga loyalitas pengguna sepeda                                                             
 """)
