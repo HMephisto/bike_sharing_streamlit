@@ -74,6 +74,7 @@ st.markdown("""
 
 *   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500 mengindikasikan bahwa pekerja atau pelajar meminati penggunaan sepeda setiap harinya
 *   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500 mengindikasikan pula bahwa sepeda tetap menjadi tranportasi yang memiliki banyak minat di hari libur
+*   Holiday pada hari biasa (Monday-Friday) nemiliki grafik yang naik turun mengindikasikan bahwa minat penggunaan sepeda tidak terlalu stabil di hari-hari biasa yang memiliki waktu libur           
 ---        
 #### Conclusion:
     
