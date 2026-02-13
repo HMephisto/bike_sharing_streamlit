@@ -239,29 +239,8 @@ Dari hasil analisis, rata-rata penyewaan sepeda di **awal bulan (1–10)** menca
 Meskipun ada perbedaan, peningkatan hanya **{abs(persen_beda):.1f}%** menunjukkan perbedaan tidak terlalu signifikan. Faktor cuaca, hari kerja, dan pola musiman memiliki pengaruh lebih besar. Namun, peningkatan ini tetap bisa dimanfaatkan untuk strategi promosi di awal bulan.
 
 ### 💡 Rekomendasi untuk Perusahaan
-
-**Strategi Operasional:**
-<<<<<<< HEAD
-
-1. **Manajemen Inventori:**
-   - Sesuaikan ketersediaan sepeda berdasarkan pola awal vs akhir bulan
-   - Siapkan lebih banyak sepeda di periode yang memiliki demand lebih tinggi
-   - Lakukan pemeliharaan rutin di periode dengan demand lebih rendah
-
-2. **Strategi Pricing:**
-   - Pertimbangkan dynamic pricing berdasarkan periode bulan
-   - Tawarkan promo khusus di awal bulan untuk meningkatkan utilisasi
-   - Maksimalkan revenue di akhir bulan dengan paket premium
-
-3. **Marketing & Promosi:**
-   - Kampanye marketing intensif di periode demand rendah
-   - Program loyalitas untuk pengguna di awal bulan
-   - Bundle deals untuk mendorong penggunaan konsisten sepanjang bulan
-
-4. **Perencanaan SDM:**
-   - Alokasi staff lebih banyak di periode puncak
-   - Jadwal shift fleksibel mengikuti pola demand
-   - Training staff untuk handle peak periods
+* Menyiapkan lebih banyak sepeda di periode yang memiliki demand lebih tinggi
+* Menawarkan promo khusus di awal bulan 
 """)
 
 
