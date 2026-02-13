@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-st.set_page_config(page_title="Analysis", layout="wide")
+st.set_page_config(page_title="User Behaviour Analysis", layout="wide")
 st.sidebar.title("Bike Sharing")
 
 df = pd.read_csv("df_day_cleaned.csv")
@@ -20,7 +20,7 @@ with st.sidebar:
 
 
 st.title("User Behaviour Analysis")
-st.write("Perbandingan Working Day dan Weekend/Holiday dalam penggunaan rental sepeda")
+st.write("Perbandingan rata-rata penyewaan sepeda antara Working Day dan Weekend/Holiday ")
 
 
 # Load data
@@ -58,7 +58,7 @@ for i, cat in enumerate(categories):
     )
 
 
-ax.set_title('Rental Sepeda Working Day vs Weekend dan Holiday', fontsize=16)
+ax.set_title('Rata-rata penyewaan Sepeda Working Day vs Weekend dan Holiday', fontsize=16)
 ax.set_xlabel('Hari dalam Seminggu')
 ax.set_ylabel('Rata-rata Jumlah Rental')
 ax.set_xticks(r)
@@ -73,11 +73,21 @@ plt.show()
 st.pyplot(fig)
 
 st.markdown("""
-Berdasarkan grafik diatas, dapat disimpulkan bahwa penggunaan sepeda sangat diminati baik di working day atau holiday, dengan beberapa poin sebagai berikut :
+Berdasarkan grafik diatas, dapat diketahui bahwa :
    
 *   Pada working day, penggunaan sepeda terasa stabil dengan rentang antara 4000 - 4500
 *   pada weekend, penggunaan sepeda juga terasa stabil di angka 4000-4500
-*   Terdapat lonjakan yang sangat tinggi di hari rabu karena setelah meriset kembali dataset, ditemukan bahwa ternyata hari tersebut tepat berada pada hari libur nasional tanggal 4 Juli 2012
-*   Penurunan terjadi pula di hari selasa, karena setelah diriset kembali di dataset, ternyata holiday hanya bertepatan satu hari dengan natal, dan dikarenakan suhu yang dingin pemakaian sepeda menjadi sedikit
-        
+*   Terdapat lonjakan yang sangat tinggi di hari rabu karena setelah meriset kembali dataset, ditemukan bahwa ternyata hari rabu selama rentang 2 tahun hanya memiliki satu libur pada tanggal 4 Juli 2012 yang lonjakan nya sudah sangat tinggi
+*   Penurunan terjadi pula di hari selasa, karena setelah diriset kembali di dataset, ternyata holiday untuk hari selasa hanya ada 1 yang bertepatan di tanggal 25 Desember 2012
+            
+Maka insight yang bisa kita dapat, sebagai berikut :
+   
+*   Rata-rata pengguna menggunakan sepeda ketika working day dan weekend, dan grafik penggunaan sangat stabil yang bisa digunakan perusahaan untuk acuan tetap menjaga ketersediaan sepeda saat working day
+*   Penggunaan sepeda saat holiday cenderung naik turun, dan memiliki kecenderungan dengan suhu/musim. Ini juga bisa digunakan oleh perusahaan misal untuk pemeliharaan sepeda
+
+Saran yang bisa diberikan untuk perusahaan adalah sebagai berikut:
+
+*   Persiapkan selalu ketersedian sepeda ketika working day dan weekend biasa, dan gunakan  suasana suhu/musim  untuk pemeliharaaan sepeda
+*   Holiday cenderung naik dan turun, maka direkomendasikan pula untuk perusahaan mempersiapkan stok sepeda cadangan agar supply tetap tersedia
+*   Persiapkan diskon voucher/promo di hari-hari non-Holiday (Wworking day/Weekend), karena ini akan menjaga loyalitas pengguna sepeda                                                             
 """)
