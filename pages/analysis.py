@@ -86,7 +86,7 @@ st.markdown("""
 
 *   Persiapkan selalu ketersedian sepeda ketika working day dan weekend/holiday
 *   Holiday cenderung naik dan turun, maka direkomendasikan pula untuk perusahaan mempersiapkan stok sepeda cadangan agar supply tetap tersedia 
-*   Persiapkan diskon voucher/promo di hari-hari non-Holiday (Wworking day/Weekend), karena ini akan menjaga loyalitas pengguna sepeda                                                             
+*   Persiapkan diskon voucher/promo di hari-hari non-Holiday (working day/Weekend), karena ini akan menjaga loyalitas pengguna sepeda                                                             
 """)
 
 st.divider()
